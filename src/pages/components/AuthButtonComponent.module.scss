@@ -1,0 +1,12 @@
+.AuthButton {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 20px;
+    line-height: 100px;
+    background-color: rgb(223, 193, 236);
+
+    &:hover{
+        background-color: rgb(175, 151, 185);
+    }
+}

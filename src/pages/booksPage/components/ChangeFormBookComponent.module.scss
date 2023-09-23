@@ -1,0 +1,24 @@
+$fieldsColor: rgb(73, 83, 100);
+
+.fields {
+    background-color: $fieldsColor;
+    border: 20px solid $fieldsColor;
+    border-radius: 20px;
+    position: fixed;
+    margin-top: 30vh;
+    margin-left: 35vw;
+    left: 0;
+    height: 40vh;
+    width: 30vw;
+    display: inline-flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+    
+    & > * {
+        height: 60px;
+        width: 30vw;
+        text-align: center;
+    }
+}
