@@ -1,20 +1,27 @@
+import { useState } from "react"
+
+import { SignUpFormComponent } from "./components/SignUpFormComponent"
+import { SignInFormComponent } from "./components/SignInFormComponent"
+
+import styles from "./AuthPage.module.scss"
+
 export const AuthPage = () => {
+    const [signUp, SetSignUp] = useState(false)
 
     return (
-        <div className="form">
-            <form>
-            <div className="input-container">
-                <label>Username </label>
-                <input type="text" name="uname" required />
+        <div className={styles.main}>
+            <div className={styles.formConteiner}>
+                <div className={styles.form}>
+                    {!signUp && <SignInFormComponent/>}
+                </div>
+                <div className={styles.form}>
+                    {signUp && <SignUpFormComponent/>}
+                </div>
+                {!signUp && <div onClick={() => SetSignUp(true)} className={styles.signUp}>sign up</div>}
+                {signUp && <div onClick={() => SetSignUp(false)} className={styles.signUp}>sign in</div>}
             </div>
-            <div className="input-container">
-                <label>Password </label>
-                <input type="password" name="pass" required />
-            </div>
-            <div className="button-container">
-                <input type="submit" />
-            </div>
-            </form>
+           
         </div>
+       
     )
 }

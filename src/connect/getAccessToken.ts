@@ -13,7 +13,7 @@ import { baseQuery } from "./baseQuery";
 // })
 
 export const getAccessToken = () => {
-    const storageContent = localStorage.getItem(`oidc.user:${config.AUTHORITY}:E.Shop`);
+    const storageContent = localStorage.getItem(`library.token`)
     
     if (storageContent) return JSON.parse(storageContent)
     

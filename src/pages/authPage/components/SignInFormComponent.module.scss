@@ -1,0 +1,13 @@
+.fields {
+    display: inline-flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    & > * {
+        margin: 10px;
+        height: 20px;
+        width: 30vw;
+        text-align: center;
+    }
+}

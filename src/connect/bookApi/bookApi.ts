@@ -1,9 +1,10 @@
 
 import { baseQuery } from "../baseQuery";
-import { Book } from "../../models/book";
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { FethBooksResponse } from "./Responses";
 import { AddBookRequest, ChangeBookRequest } from "./Requests";
+import { SignInResponse } from "../authApi/Responses";
+import { SignInEmailRequest } from "../authApi/Requests";
 
 export const bookApi = createApi({
     reducerPath: "book",
@@ -32,7 +33,7 @@ export const bookApi = createApi({
                     url: `book/delete?id=${id}`,
                     method: 'DELETE'
                 })
-            })
+            }),
         })
     }
 })

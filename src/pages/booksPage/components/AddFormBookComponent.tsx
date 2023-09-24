@@ -11,7 +11,7 @@ interface AddFormBookComponentProps {
 }
 
 export const AddFormBookComponent = (props: AddFormBookComponentProps) => {
-    const [addBook, result] = useAddBookMutation()
+    const [addBook] = useAddBookMutation()
 
     const validateBook = (book: Book) => {
         const errors: string[] = []
