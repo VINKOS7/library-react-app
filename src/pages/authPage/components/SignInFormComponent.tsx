@@ -6,9 +6,12 @@ import { SignInEmailRequest } from '../../../connect/authApi/Requests'
 import styles from './SignInFormComponent.module.scss'
 import { useAddBookMutation } from '../../../connect/bookApi/bookApi'
 import { useSignInMutation } from '../../../connect/authApi/authApi'
+import { useNavigate } from 'react-router'
 
 export const SignInFormComponent = () => {
     const [signIn] = useSignInMutation()
+
+    const navigate = useNavigate()
 
     return (
         <div className={styles.main}>
@@ -24,6 +27,8 @@ export const SignInFormComponent = () => {
                 const data = await signIn(values).unwrap()
 
                 localStorage.setItem(`library.token`, JSON.stringify(data.token))
+
+                navigate("/")
             }}
         >{({ isSubmitting }) => (     
             <Form className={styles.fields}>
