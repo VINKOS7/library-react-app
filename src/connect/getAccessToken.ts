@@ -14,8 +14,20 @@ import { baseQuery } from "./baseQuery";
 
 export const getAccessToken = () => {
     const storageContent = localStorage.getItem(`library.token`)
-    
-    if (storageContent) return JSON.parse(storageContent)
+
+    if (storageContent){
+        let token = JSON.parse(storageContent) as string
+
+        if(Array.from(token)[0] = '"'){
+
+            token = token.substring(1)
+            token = token.substring(0, token.length - 1)
+
+            return token
+        }
+
+        return JSON.parse(storageContent)
+    }
     
     return null
 };

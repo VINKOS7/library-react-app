@@ -58,9 +58,9 @@ export const BooksPage = () => {
         <div>
             {!addingBook && !changeBook &&
                 <div className={styles.bookHeader}>
-                    {!token && <AuthButtonComponent/>}            
+                    {token && <AuthButtonComponent/>}            
                     <div onClick={() => SetAddingBook(true)}>
-                        {!token && <AddBookButtonComponent />}
+                        {token && <AddBookButtonComponent />}
                     </div>
                 </div>
             }
