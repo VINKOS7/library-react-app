@@ -30,7 +30,7 @@ export const BookItemComponent = (props: BookItemComponentProps) => {
                 <div>Автор: {props.book.author}</div>
                 <div>Год: {new Date(props.book.dateOfWritten).getFullYear()}</div>
             </div>
-            {!token && 
+            {token && 
                 <div className={styles.buttons}>
                     <div onClick={() => props.changeBook(props.book.id)}>
                         <BookChangeButtonComponent/>
