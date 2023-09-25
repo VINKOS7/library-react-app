@@ -26,7 +26,7 @@ export const SignInFormComponent = () => {
 
                 const data = await signIn(values).unwrap()
 
-                localStorage.setItem(`library.token`, JSON.stringify(data.token))
+                localStorage.setItem(`library.token`, data.token)
 
                 navigate("/")
             }}

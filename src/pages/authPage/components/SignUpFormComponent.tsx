@@ -57,7 +57,7 @@ export const SignUpFormComponent = () => {
                     const data = await activate(values).unwrap()
 
                     if(data) {
-                        localStorage.setItem('library.token', JSON.stringify(data.token))
+                        localStorage.setItem('library.token', data.token)
 
                         navigate('/')
                     } 
